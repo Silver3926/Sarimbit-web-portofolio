@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+  --teal: #23494d;
+  --gold: #d4af37;
+  --sand: #d9b48f;
+  --cream: #f8f4ec;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--teal); }
+.font-display { font-family: Georgia, 'Times New Roman', serif; }

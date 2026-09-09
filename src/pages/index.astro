@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+
+const whatsapp = '6285865162423';
+const whatsappMessage = encodeURIComponent('Halo SARIMBIT Catering & Bakery, saya ingin mendapatkan informasi mengenai layanan catering.');
+const whatsappUrl = `https://wa.me/${whatsapp}?text=${whatsappMessage}`;
+const mapsUrl = 'https://maps.app.goo.gl/SUt1vXJQnrR5RWew9';
+
+const services = [
+  { title: 'Porsi & Box / Prasmanan', text: 'Pilihan praktis nasi box, porsi satuan, hingga sajian prasmanan yang lengkap dan elegan.' },
+  { title: 'Snack & Makan Besar', text: 'Aneka kudapan ringan dan menu makan besar bercita rasa istimewa untuk berbagai kebutuhan.' },
+  { title: 'Aneka Roti & Roti Hias', text: 'Roti lezat sehari-hari hingga kreasi roti hias spesial untuk momen penting Anda.' },
+  { title: 'Tumpeng', text: 'Nasi tumpeng tradisional untuk tasyakuran, peresmian, dan perayaan bermakna.' },
+];
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="SARIMBIT Catering & Bakery — Cita rasa keluarga, pilihan utama Anda. Melayani Gantiwarno-Prambanan." />
+    <title>SARIMBIT Catering & Bakery</title>
+  </head>
+  <body>
+    <header class="absolute inset-x-0 top-0 z-10">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <a href="#beranda" class="font-display text-xl font-bold tracking-wide text-white">SARIMBIT</a>
+        <a href={whatsappUrl} class="rounded-full border border-[#D4AF37] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#D4AF37] hover:text-[#23494D]">Hubungi Kami</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="beranda" class="relative flex min-h-[680px] items-center overflow-hidden bg-[#23494D] px-6 py-32 text-white">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(212,175,55,.18),transparent_32%),radial-gradient(circle_at_10%_80%,rgba(217,180,143,.12),transparent_28%)]"></div>
+        <div class="relative mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+          <div>
+            <p class="mb-5 text-sm font-semibold uppercase tracking-[.28em] text-[#D4AF37]">Catering & Bakery</p>
+            <h1 class="font-display text-5xl leading-tight md:text-7xl">Cita rasa keluarga,<br /><span class="text-[#D4AF37]">pilihan utama Anda</span></h1>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80">Melayani berbagai kebutuhan kuliner Anda, mulai dari acara harian hingga perayaan spesial.</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href={whatsappUrl} class="rounded-full bg-[#D4AF37] px-6 py-3 font-bold text-[#23494D] transition hover:bg-white">Pesan via WhatsApp</a>
+              <a href="#layanan" class="rounded-full border border-white/40 px-6 py-3 font-semibold transition hover:border-[#D4AF37] hover:text-[#D4AF37]">Lihat layanan</a>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <img src="/Sarimbit-web-portofolio/placeholders/food-placeholder.svg" alt="Placeholder foto hidangan SARIMBIT" class="w-full max-w-md rounded-[2rem] border border-[#D4AF37]/40 shadow-2xl" />
+          </div>
+        </div>
+      </section>
+
+      <section id="tentang" class="mx-auto max-w-4xl px-6 py-24 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[.25em] text-[#C59B27]">Tentang SARIMBIT</p>
+        <h2 class="font-display mt-3 text-4xl md:text-5xl">Disiapkan dengan sepenuh hati</h2>
+        <p class="mt-6 leading-8 text-[#23494D]/75">SARIMBIT siap melayani dengan sepenuh hati bagaikan keluarga sendiri untuk kepuasan setiap tamu. Kami menghadirkan pilihan kuliner yang hangat, beragam, dan sesuai untuk berbagai momen.</p>
+      </section>
+
+      <section id="layanan" class="bg-white px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-12 text-center"><p class="text-sm font-semibold uppercase tracking-[.25em] text-[#C59B27]">Layanan dan menu kami</p><h2 class="font-display mt-3 text-4xl md:text-5xl">Untuk setiap momen</h2></div>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, index) => <article class="rounded-2xl border border-[#D9B48F]/40 bg-[#F8F4EC] p-7 transition hover:-translate-y-1 hover:shadow-lg"><span class="font-display text-3xl text-[#D4AF37]">0{index + 1}</span><h3 class="font-display mt-6 text-2xl">{service.title}</h3><p class="mt-3 text-sm leading-7 text-[#23494D]/70">{service.text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section id="galeri" class="px-6 py-24"><div class="mx-auto max-w-6xl"><div class="mb-12 text-center"><p class="text-sm font-semibold uppercase tracking-[.25em] text-[#C59B27]">Galeri</p><h2 class="font-display mt-3 text-4xl md:text-5xl">Segera hadir</h2><p class="mx-auto mt-4 max-w-xl text-[#23494D]/70">Foto hidangan dan momen SARIMBIT akan ditampilkan di sini.</p></div><div class="grid gap-5 sm:grid-cols-3"><img src="/Sarimbit-web-portofolio/placeholders/food-placeholder.svg" alt="Placeholder galeri 1" /><img src="/Sarimbit-web-portofolio/placeholders/food-placeholder.svg" alt="Placeholder galeri 2" /><img src="/Sarimbit-web-portofolio/placeholders/food-placeholder.svg" alt="Placeholder galeri 3" /></div></div></section>
+
+      <section id="kontak" class="bg-[#23494D] px-6 py-24 text-center text-white"><p class="text-sm font-semibold uppercase tracking-[.25em] text-[#D4AF37]">Area layanan</p><h2 class="font-display mt-3 text-4xl md:text-5xl">Gantiwarno – Prambanan</h2><p class="mx-auto mt-5 max-w-xl text-white/75">Mari bicarakan kebutuhan catering untuk acara Anda.</p><div class="mt-8 flex flex-wrap justify-center gap-4"><a href={whatsappUrl} class="rounded-full bg-[#D4AF37] px-6 py-3 font-bold text-[#23494D] hover:bg-white">Chat WhatsApp</a><a href={mapsUrl} target="_blank" rel="noreferrer" class="rounded-full border border-white/40 px-6 py-3 font-semibold hover:border-[#D4AF37] hover:text-[#D4AF37]">Buka Google Maps</a></div></section>
+    </main>
+
+    <footer class="bg-[#19383B] px-6 py-8 text-center text-sm text-white/60"><p class="font-display text-lg text-[#D4AF37]">SARIMBIT Catering & Bakery</p><p class="mt-2">Cita rasa keluarga, pilihan utama Anda</p></footer>
+  </body>
+</html>
